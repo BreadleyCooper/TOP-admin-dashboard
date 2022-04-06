@@ -2,23 +2,135 @@
 :root {
     font-family: "Nunito", sans-serif;
     font-size: 15px;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
 }
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 5fr;
+    height: 100vh;
 }
 .sidebar {
     background-color: #bada55;
     grid-area: 1 / 1 / -1 / 2;
-
+    display: grid;
+    grid-template-rows: 80px repeat(9, 50px);
+}
+.menuListItem {
+  margin-left: 20px;
 }
 .header {
     grid-area: 1 / 2 / 2 / -1;
     display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgb(100,80,100);
+    padding: 10px 30px 0;
+}
+.searchContainer {
+  display: grid;
+  grid-template-columns: 50px minmax(200px, 500px) 50px 1fr 1fr;
+  grid-row-start: 1;
+  grid-auto-flow: column;
+  padding-top: 20px;
+}
+.searchBar {
+    display:flex;
+    
+}
+.bell, .profileSticker{
+    padding-left: 70px;
+}
+.searchBar > input{
+    flex: 1;
+    border-radius: 20px;
+    height: 1.8em;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+.profileBar {
+  grid-row-start: 2;
+  display: grid;
+  grid-template-columns: 2fr 8fr 5fr;
+}
+.actionButtonContainer {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+   
+}
+.actionButtonContainer>button {
+  height: 30px;
+  width: 100px;
+  border-radius: 25px;
 }
 .contentContainer {
     grid-area: 2 / 2 / -1 / -1;
     display: grid;
     grid-template-columns: 4fr 1fr;
+    grid-template-rows: 50px 1fr;
+    background-color: #dee0e3;
+    padding-left: 30px;
+}
+.cardTitleContainer {
+  display: grid;
+  grid-area: 1 / 1 / 2 / -1;
+  grid-auto-flow: column;
+  grid-template-columns: 4fr 1fr;
+  padding-top: 10px;
+}
+.announcementTitle {
+  grid-column-start: 2;
+  grid-column-end: -1;
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 200px));
+  grid-row-start: 2;
+  background-color: #dee0e3;
+  gap: 20px;
+  padding: 10px;
+}
+
+.card {
+  height: 1fr;
+  width: 400px;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.cardButtons {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    padding: 1em;
+}
+.announcemenetsCard {
+    display: grid;
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-right: 10px;
+    width: 300px;
+    border-radius: 10px;
+}
+.announcementItem2 {
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+}
+.trendingContainer {
+    border-radius: 10px;
+    display: grid;
+}
+.trendingCard {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 10px;
+    display: grid;
+    width: 300px;
 }
